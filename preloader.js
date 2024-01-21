@@ -11,6 +11,7 @@ overlay.style.cssText = `
     height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 999;
+    user-select: none; /* Désactiver la sélection de texte */
 `;
 
 const gifContainer = document.createElement('div');
@@ -26,8 +27,8 @@ gifContainer.style.cssText = `
 `;
 
 const gifElement = document.createElement('img');
-gifElement.width = 640; // Définissez la largeur du GIF
-gifElement.height = 360; // Définissez la hauteur du GIF
+gifElement.width = 768; // Définissez la largeur du GIF
+gifElement.height = 220; // Définissez la hauteur du GIF
 gifElement.src = 'https://arthur-mf.github.io/flutterflow/loading.gif'; // Remplacez par l'URL de votre GIF
 gifElement.style.userSelect = 'none'; // Désactiver la sélection de texte
 gifElement.style.pointerEvents = 'none'; // Désactiver les événements de la souris sur l'image

@@ -24,12 +24,13 @@ gifContainer.style.cssText = `
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-gifContainer.style.display = 'none';
 
 const gifElement = document.createElement('img');
-gifElement.width = 768; // Définissez la largeur du GIF
-gifElement.height = 220; // Définissez la hauteur du GIF
+gifElement.width = 640; // Définissez la largeur du GIF
+gifElement.height = 360; // Définissez la hauteur du GIF
 gifElement.src = 'https://arthur-mf.github.io/flutterflow/loading.gif'; // Remplacez par l'URL de votre GIF
+gifElement.style.userSelect = 'none'; // Désactiver la sélection de texte
+gifElement.style.pointerEvents = 'none'; // Désactiver les événements de la souris sur l'image
 
 gifContainer.appendChild(gifElement);
 

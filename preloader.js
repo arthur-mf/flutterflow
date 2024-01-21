@@ -13,9 +13,9 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-const lottieContainer = document.createElement('div');
-lottieContainer.id = 'lottieContainer';
-lottieContainer.style.cssText = `
+const videoContainer = document.createElement('div');
+videoContainer.id = 'videoContainer';
+videoContainer.style.cssText = `
     max-width: 100%;
     max-height: 100%;
     display: none;
@@ -24,26 +24,31 @@ lottieContainer.style.cssText = `
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-lottieContainer.style.display = 'none';
+videoContainer.style.display = 'none';
+
+const videoElement = document.createElement('video');
+videoElement.width = 640; // Définissez la largeur de la vidéo
+videoElement.height = 360; // Définissez la hauteur de la vidéo
+videoElement.controls = true; // Ajoutez des contrôles vidéo
+videoElement.autoplay = true; // Lecture automatique de la vidéo
+
+const sourceElement = document.createElement('source');
+sourceElement.src = 'https://arthur-mf.github.io/flutterflow/loading.mp4'; // Remplacez par l'URL de votre vidéo
+sourceElement.type = 'video/mp4';
+
+videoElement.appendChild(sourceElement);
+videoContainer.appendChild(videoElement);
 
 document.body.appendChild(overlay);
-document.body.appendChild(lottieContainer);
+document.body.appendChild(videoContainer);
 
 function hideOverlay() {
     overlay.style.display = 'none';
-    lottieContainer.style.display = 'block';
-    // Substitua pela URL direta do seu arquivo JSON do Lottie.
-    lottie.loadAnimation({
-        container: lottieContainer,
-        renderer: 'svg', // ou 'canvas' se preferir
-        loop: true,
-        autoplay: true,
-        path: 'https://arthur-mf.github.io/flutterflow/loader.json',
-    });
+    videoContainer.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    hideOverlay(); // Teste sem o setTimeout
+    hideOverlay();
 });
 
 window.addEventListener('load', hideOverlay);

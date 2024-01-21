@@ -80,7 +80,7 @@ loop: true, // Set to true if you want the animation to loop
 
 autoplay: true, // Set to true if you want the animation to start automatically
 
-path: 'https://raw.githubusercontent.com/arthur-mf/flutterflow/main/loader.json', // Replace with the actual URL of your Lottie JSON file
+path: 'https://arthur-mf.github.io/flutterflow/loader.json', // Replace with the actual URL of your Lottie JSON file
 
 };
 

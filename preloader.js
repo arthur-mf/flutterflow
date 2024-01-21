@@ -13,9 +13,9 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-const videoContainer = document.createElement('div');
-videoContainer.id = 'videoContainer';
-videoContainer.style.cssText = `
+const gifContainer = document.createElement('div');
+gifContainer.id = 'gifContainer';
+gifContainer.style.cssText = `
     max-width: 100%;
     max-height: 100%;
     display: none;
@@ -24,27 +24,21 @@ videoContainer.style.cssText = `
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-videoContainer.style.display = 'none';
+gifContainer.style.display = 'none';
 
-const videoElement = document.createElement('video');
-videoElement.width = 640; // Définissez la largeur de la vidéo
-videoElement.height = 360; // Définissez la hauteur de la vidéo
-videoElement.controls = true; // Ajoutez des contrôles vidéo
-videoElement.autoplay = true; // Lecture automatique de la vidéo
+const gifElement = document.createElement('img');
+gifElement.width = 768; // Définissez la largeur du GIF
+gifElement.height = 220; // Définissez la hauteur du GIF
+gifElement.src = 'https://arthur-mf.github.io/flutterflow/loading.gif'; // Remplacez par l'URL de votre GIF
 
-const sourceElement = document.createElement('source');
-sourceElement.src = 'https://arthur-mf.github.io/flutterflow/loading.mp4'; // Remplacez par l'URL de votre vidéo
-sourceElement.type = 'video/mp4';
-
-videoElement.appendChild(sourceElement);
-videoContainer.appendChild(videoElement);
+gifContainer.appendChild(gifElement);
 
 document.body.appendChild(overlay);
-document.body.appendChild(videoContainer);
+document.body.appendChild(gifContainer);
 
 function hideOverlay() {
     overlay.style.display = 'none';
-    videoContainer.style.display = 'block';
+    gifContainer.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

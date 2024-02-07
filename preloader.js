@@ -27,8 +27,8 @@ gifContainer.style.cssText = `
 `;
 
 const gifElement = document.createElement('img');
-gifElement.width = 768; // Définissez la largeur du GIF
-gifElement.height = 220; // Définissez la hauteur du GIF
+gifElement.style.width = '50%'; // Définissez la largeur du GIF en pourcentage
+gifElement.style.height = 'auto'; // La hauteur s'ajuste automatiquement
 gifElement.src = 'https://arthur-mf.github.io/flutterflow/loading.gif'; // Remplacez par l'URL de votre GIF
 gifElement.style.userSelect = 'none'; // Désactiver la sélection de texte
 gifElement.style.pointerEvents = 'none'; // Désactiver les événements de la souris sur l'image

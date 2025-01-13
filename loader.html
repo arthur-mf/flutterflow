@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Screen</title>
+  <style>
+    /* Style de base pour le body */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('your-background-image-url.jpg'); /* URL de votre image de fond */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    /* Conteneur pour l'animation */
+    #loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    /* Texte ou logo au-dessus de l'animation */
+    #loading-text {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    /* Ajustement du conteneur Lottie */
+    #lottie-animation {
+      width: 150px;
+      height: 150px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.8/build/player/lottie.min.js"></script>
+</head>
+<body>
+  <div id="loading-container">
+    <div id="loading-text">Chargement...</div>
+    <div id="lottie-animation"></div>
+  </div>
+
+  <script>
+    // Charger l'animation Lottie après que le DOM soit prêt
+    document.addEventListener('DOMContentLoaded', function () {
+      var animationContainer = document.getElementById('lottie-animation');
+
+      // Configuration de l'animation Lottie
+      lottie.loadAnimation({
+        container: animationContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'your-lottie-animation-url.json', // Remplacez par l'URL de votre animation Lottie
+      });
+
+      // Optionnel : masquer l'écran de chargement après un délai simulé (à remplacer par Flutter)
+      setTimeout(() => {
+        document.body.innerHTML = ''; // Simule le passage à l'app Flutter
+      }, 5000); // 5 secondes
+    });
+  </script>
+</body>
+</html>
